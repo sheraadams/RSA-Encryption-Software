@@ -9,6 +9,7 @@ colors = {
     "text_color": "#BB86FC" # lavender
 }
 
+# define the window
 window = Tk()
 window.geometry("620x620")
 window.configure(bg=colors["bg_color"])
@@ -97,4 +98,5 @@ chatb3.pack()
 button3 = Button(window, bg=colors["button_color"], fg=colors["button_text_color"], height=1, width=10, text="Decrypt", command=decode)
 button3.pack()
 
+# start the main loop
 window.mainloop()
