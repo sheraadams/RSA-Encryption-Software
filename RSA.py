@@ -1,6 +1,7 @@
+# imports
 from tkinter import Tk, Label, Text, Button, END
 
-# Color dictionary
+# Define a color dictionary
 colors = {
     "button_color": "#BB86FC", # lavender
     "bg_color": "#1c1b1f",  # dark slate
@@ -9,6 +10,7 @@ colors = {
     "text_color": "#BB86FC" # lavender
 }
 
+# define the window
 window = Tk()
 window.geometry("620x620")
 window.configure(bg=colors["bg_color"])
@@ -49,6 +51,7 @@ def decode():
 
     dec_message = [(int(i) ** d) % n for i in decoded_temp]
 
+    # define a map for decryption
     mapping = {
         1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f', 7: 'g', 8: 'h', 9: 'i', 10: 'j',
         11: 'k', 12: 'l', 13: 'm', 14: 'n', 15: 'o', 16: 'p', 17: 'q', 18: 'r', 19: 's',
@@ -58,7 +61,7 @@ def decode():
     dec_message = [mapping[i] for i in dec_message if i in mapping]
 
     dec_str = ''.join(dec_message)
-
+    
     chatb3.delete("1.0", END)
     chatb3.insert(END, dec_str)
 
@@ -97,4 +100,5 @@ chatb3.pack()
 button3 = Button(window, bg=colors["button_color"], fg=colors["button_text_color"], height=1, width=10, text="Decrypt", command=decode)
 button3.pack()
 
+# Start the main loop
 window.mainloop()
